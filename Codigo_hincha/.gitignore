@@ -1,0 +1,13 @@
+## Ignore Visual Studio / .NET Core / C# build outputs
+bin/
+obj/
+out/
+.vs/
+.vscode/
+*.user
+*.userossc
+*.suo
+*.userprefs
+appsettings.Development.json
+appsettings.Local.json
+*.log
