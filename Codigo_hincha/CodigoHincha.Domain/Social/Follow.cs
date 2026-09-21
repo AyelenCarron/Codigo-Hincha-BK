@@ -1,20 +1,18 @@
-using System.Runtime.InteropSservices.Marshalling;
-using CodigoHincha.Domain.Auth
+using System.Runtime.InteropServices.Marshalling;
+using CodigoHincha.Domain.Auth;
 
 namespace CodigoHincha.Domain.Social;
 
-public class follow
+public class Follow
 {
     private long id;
-    public global::System.Int64 Id { get => id; set => id = value; }
-    public User Follower { get => follower; set => follower = value; }
+    public long Id { get => id; set => id = value; }
 
     private User? follower;
-        public User Follower { get => follower; set => follower = value; }
-    public user Following { get => Following1; set => Following1 = value; }
+    public virtual User? Follower { get => follower; set => follower = value; }
     
-    private user? following;
-    public user Following1 { get => following; set => following = value; }
+    private User? following;
+    public virtual User? Following { get => following; set => following = value; }
 
 }
 
