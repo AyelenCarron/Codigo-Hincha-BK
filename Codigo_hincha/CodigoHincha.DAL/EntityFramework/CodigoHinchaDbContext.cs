@@ -1,4 +1,9 @@
+using CodigoHincha.Domain.Auth;
+using CodigoHincha.Domain.FileSystem;
+using CodigoHincha.Domain.Post;
+using CodigoHincha.Domain.Social;
 using Microsoft.EntityFrameworkCore;
+using File = CodigoHincha.Domain.FileSystem.File;
 
 namespace CodigoHincha.DAL.EntityFramework;
 
@@ -13,6 +18,20 @@ public class CodigoHinchaDbContext(DbContextOptions<CodigoHinchaDbContext> optio
     {
         base.OnModelCreating(modelBuilder);
 
-        // Configuración de entidades y relaciones aquí.
+    
     }
+    public DbSet<Comment> Comments => Set<Comment>();
+    public DbSet<Reaction> Reactions => Set<Reaction>();
+    public DbSet<User> Users => Set<User>();
+    public DbSet<Post> Posts => Set<Post>();
+    public DbSet<File> Files => Set<File>();
+    public DbSet<Image> Images => Set<Image>();
+
+    public DbSet <Club> Clubs => Set<Club>();
+
+    public DbSet <Follow> Follows => Set<Follow>();
+
+    public DbSet <Ban> Bans => Set<Ban>();
+    
+
 }

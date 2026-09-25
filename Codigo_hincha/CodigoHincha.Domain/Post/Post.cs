@@ -1,14 +1,20 @@
+using CodigoHincha.Domain.Auth;
+using CodigoHincha.Domain.FileSystem;
+
 namespace CodigoHincha.Domain.Post;
 
 public class Post
 {
-    private long id;
-    private long Id{ get=> id; set => id = value; }
+    private long idPost;
+    public long IdPost { get => idPost; set => idPost = value; }
 
     private string body= String.Empty;
     public string Body { get => body; set => body = value; }
 
-    private CodigoHincha.Domain.File.File? file;
+    private DateTime dateTime = DateTime.UtcNow;
+    public DateTime DateTime { get => dateTime; set => dateTime = value; }
+
+    private CodigoHincha.Domain.FileSystem.File? file;
     public virtual CodigoHincha.Domain.FileSystem.File? File { get => file; set => file = value; }
 
     private User? user;

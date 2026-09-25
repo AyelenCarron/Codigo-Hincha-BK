@@ -5,8 +5,8 @@ namespace CodigoHincha.Domain.Social;
 
 public class Follow
 {
-    private long id;
-    public long Id { get => id; set => id = value; }
+    private long idFollow;
+    public long IdFollow { get => idFollow; set => idFollow = value; }
 
     private User? follower;
     public virtual User? Follower { get => follower; set => follower = value; }
