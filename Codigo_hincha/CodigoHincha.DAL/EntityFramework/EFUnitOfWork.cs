@@ -1,12 +1,7 @@
 using CodigoHincha.DAL.interfaces;
-
-
-
-
-
-
-
-
+using CodigoHincha.DAL.interfaces.Auth;
+using CodigoHincha.DAL.interfaces.FileSystem;
+using CodigoHincha.DAL.interfaces.Post;
 
 namespace CodigoHincha.DAL.EntityFramework;
 
@@ -20,23 +15,23 @@ public class EFUnitOfWork(CodigoHinchaDbContext context) : IUnitOfWork
 
     public IBanRepository BanRepository => throw new NotImplementedException();
 
-    public IUserRolRepositoty UserRolRepositoty => throw new NotImplementedException();
+    public IUserRolRepository UserRolRepository => throw new NotImplementedException();
 
-    public IFileRepositoty FileRepositoty => throw new NotImplementedException();
+    public IFileRepository FileRepository => throw new NotImplementedException();
 
-    public IImageRepositoty ImageRepositoty => throw new NotImplementedException();
+    public IImageRepository ImageRepository => throw new NotImplementedException();
 
-    public ICommentRepositoty CommentRepositoty => throw new NotImplementedException();
+    public ICommentRepository CommentRepository => throw new NotImplementedException();
 
-    public IPostRepositoty PostRepositoty => throw new NotImplementedException();
-
-    public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-    {
-        return _context.SaveChangesAsync(cancellationToken);
-    }
+    public IPostRepository PostRepository => throw new NotImplementedException();
 
     public void Dispose()
     {
-        _context.Dispose();
+        throw new NotImplementedException();
+    }
+
+    public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
     }
 }

@@ -1,7 +1,7 @@
 using CodigoHincha.DAL.interfaces.FileSystem;
 
 namespace CodigoHincha.DAL.interfaces.FileSystem;
-public class EFImageRepository :IImagenRepository
+public class EFImageRepository :IImageRepository
 {
     
 }
