@@ -1,3 +1,4 @@
+using CodigoHincha.DAL.EntityFramework.Auth;
 using CodigoHincha.DAL.interfaces;
 using CodigoHincha.DAL.interfaces.Auth;
 using CodigoHincha.DAL.interfaces.FileSystem;
@@ -9,7 +10,18 @@ public class EFUnitOfWork(CodigoHinchaDbContext context) : IUnitOfWork
 {
     private readonly CodigoHinchaDbContext _context = context;
 
-    public IUserRepository UserRepository => throw new NotImplementedException();
+    private IUserRepository? userRepository; 
+
+    public IUserRepository UserRepository;
+    {
+        get
+        {
+            if (this.userRepository is null)
+            {
+                this.userRepository = EFUserRepository()
+            }
+        }
+    }
 
     public IPersonRepository PersonRepository => throw new NotImplementedException();
 
