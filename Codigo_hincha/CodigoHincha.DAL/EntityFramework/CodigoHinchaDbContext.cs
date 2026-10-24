@@ -1,9 +1,7 @@
 using CodigoHincha.Domain.Auth;
 using CodigoHincha.Domain.FileSystem;
-using CodigoHincha.Domain.Post;
 using CodigoHincha.Domain.Social;
 using Microsoft.EntityFrameworkCore;
-using File = CodigoHincha.Domain.FileSystem.File;
 
 namespace CodigoHincha.DAL.EntityFramework;
 
@@ -23,9 +21,9 @@ public class CodigoHinchaDbContext(DbContextOptions<CodigoHinchaDbContext> optio
     public DbSet<Comment> Comments => Set<Comment>();
     public DbSet<Reaction> Reactions => Set<Reaction>();
     public DbSet<User> Users => Set<User>();
-    public DbSet<Post> Posts => Set<Post>();
-    public DbSet<File> Files => Set<File>();
-    public DbSet<Image> Images => Set<Image>();
+    public DbSet<CodigoHincha.Domain.Post.Post> Posts => Set<CodigoHincha.Domain.Post.Post>();
+    public DbSet<CodigoHincha.Domain.FileSystem.File> Files => Set<CodigoHincha.Domain.FileSystem.File>();
+    public DbSet<CodigoHincha.Domain.FileSystem.Image> Images => Set<CodigoHincha.Domain.FileSystem.Image>();
 
     public DbSet <Club> Clubs => Set<Club>();
 

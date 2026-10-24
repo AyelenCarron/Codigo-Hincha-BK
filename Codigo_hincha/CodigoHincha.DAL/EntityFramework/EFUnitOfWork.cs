@@ -12,18 +12,125 @@ public class EFUnitOfWork(CodigoHinchaDbContext context) : IUnitOfWork
 
     private IUserRepository? userRepository; 
 
-    public IUserRepository UserRepository;
+    public IUserRepository UserRepository
     {
         get
         {
             if (this.userRepository is null)
             {
-                this.userRepository = EFUserRepository()
+                this.userRepository = new EFUserRepository(_context);
             }
+
+            return this.userRepository;
         }
     }
 
+private IPersonRepository? personRepository; 
+
+    public IPersonRepository PersonRepository
+    {
+        get
+        {
+            if (this.personRepository is null)
+            {
+                this.personRepository = new EFPersonRepository(_context);
+            }
+
+            return this.personRepository;
+        }
+    }
+
+private IBanRepository? banRepository; 
+
+    public IBanRepository BanRepository
+    {
+        get
+        {
+            if (this.banRepository is null)
+            {
+                this.banRepository = new EFBanRepository(_context);
+            }
+
+            return this.banRepository;
+        }
+    }
+
+private IUserRolRepository? userRolRepository; 
+
+    public IUserRolRepository UserRolRepository
+    {
+        get
+        {
+            if (this.userRolRepository is null)
+            {
+                this.userRolRepository = new EFUserRolRepository(_context);
+            }
+
+            return this.userRolRepository;
+        }
+    }
+
+private IFileRepository? fileRepository; 
+
+    public IFileRepository FileRepository
+    {
+        get
+        {
+            if (this.fileRepository is null)
+            {
+                this.fileRepository = new EFFileRepository(_context);
+            }
+
+            return this.fileRepository;
+        }
+    }
+
+private IImageRepository? imageRepository; 
+
+    public IImageRepository ImageRepository
+    {
+        get
+        {
+            if (this.imageRepository is null)
+            {
+                this.imageRepository = new EFImageRepository(_context);
+            }
+
+            return this.imageRepository;
+        }
+    }
+
+private ICommentRepository? commentRepository; 
+
+    public ICommentRepository CommentRepository
+    {
+        get
+        {
+            if (this.commentRepository is null)
+            {
+                this.commentRepository = new EFCommentRepository(_context);
+            }
+
+            return this.commentRepository;
+        }
+    }
+
+private IPostRepository? postRepository; 
+
+    public IPostRepository PostRepository
+    {
+        get
+        {
+            if (this.postRepository is null)
+            {
+                this.postRepository = new EFPostRepository(_context);
+            }
+
+            return this.postRepository;
+        }
+    }
     public IPersonRepository PersonRepository => throw new NotImplementedException();
+
 
     public IBanRepository BanRepository => throw new NotImplementedException();
 
